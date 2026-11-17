@@ -1,0 +1,46 @@
+# Datasets et données potentiellement sensibles
+data/
+*.csv
+*.json
+*.parquet
+*.avro
+*.orc
+*.delta/
+*.db
+*.sqlite
+
+# Secrets et configuration locale
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Outils et artefacts
+.idea/
+.vscode/
+*.log
+logs/
+tmp/
+temp/
+dist/
+build/
+mlruns/*
+!mlruns/.gitkeep
+**/mlruns/*
+!**/mlruns/.gitkeep
+**/uncommitted/*
+!**/uncommitted/.gitkeep
