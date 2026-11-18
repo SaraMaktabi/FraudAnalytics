@@ -20,6 +20,12 @@ FraudAnalytics est un projet académique de détection de fraude bancaire, combi
 
 Les données sources doivent rester hors Git. Les accès, rétentions, classifications, lineage et contrats sont documentés dans `governance/`. Toute donnée de test doit être explicitement synthétique et validée avant ajout.
 
+## Dataset de travail réduit
+
+Avant l’EDA, exécuter `python scripts/prepare_dataset.py`. Le script lit les transactions par chunks de 100 000 lignes, conserve les dates à partir du 01/01/2015 et filtre les labels en flux via un index SQLite temporaire. Les fichiers sources ne sont jamais modifiés ; les sorties sont écrites dans `data/prepared/`, exclu de Git. Les montants négatifs et les transactions non labellisées sont conservés.
+
+Les transactions 2015–2018 constituent le périmètre batch et celles de 2019 le périmètre streaming. Les notebooks EDA doivent utiliser `data/prepared/transactions.csv` et `data/prepared/train_fraud_labels.json`.
+
 ## Validation attendue
 
 Avant une revue : tests automatisés, contrôles de qualité, vérification de configuration sans secrets et documentation de l’impact sur les couches concernées.

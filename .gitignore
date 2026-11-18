@@ -1,5 +1,6 @@
 # Datasets et données potentiellement sensibles
 data/
+data/prepared/
 *.csv
 *.json
 *.parquet
